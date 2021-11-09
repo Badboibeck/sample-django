@@ -1,0 +1,50 @@
+
+
+
+
+body {
+    padding-top: 70px;
+}
+
+/*bg = background, text
+Striking and Simple https://visme.co/blog/website-color-schemes/
+ */
+
+.bg-main {
+    background-color: #0B0C10 !important;
+}
+.bg-sec {
+    background-color: #1F2833 !important;
+}
+.bg-whiteoff {
+    background-color: #C5C6C7 !important;
+}
+.bg-teal {
+    background-color: #66FCF1 !important;
+}
+.bg-smoke-teal {
+    background-color: #45A29E !important;
+}
+.bg-sec-shaded {
+    background-color: #182028 !important;
+}
+
+.text-main {
+    color: #0B0C10 !important;
+}
+.text-sec {
+    color: #1F2833 !important;
+}
+.text-whiteoff {
+    color: #C5C6C7 !important;
+}
+.text-teal {
+    color: #45A29E !important;
+}
+.text-smoke-teal {
+    color: #45A29E !important;
+}
+
+.right-just {
+    text-align:right !important;
+}

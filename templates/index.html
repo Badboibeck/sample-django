@@ -1,267 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your New Django App</title>
+{% block content %}
+    {% load static %}
 
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Almarai:wght@800&amp;family=Nunito+Sans&amp;display=swap" />
-</head>
-
-<body>
-  <div class="container">
-    <div class="content">
-      <img src="https://assets.codepen.io/43365/logo.svg" alt="DigitalOcean Logo" width="100" />
-      <h1>Welcome to your new <a href="https://www.djangoproject.com/">Django App</a>!</h1>
-
-      <p>
-        This application is an example of how to deploy a Django Application, specifically the <a
-          href="https://docs.djangoproject.com/en/3.1/intro/tutorial01/">Django Polls App</a> to DigitalOcean's App
-        Platform. Check out their <a href="https://docs.djangoproject.com/en/3.1/intro/tutorial01/">documentation</a> to
-        learn about the app.
-      </p>
-
-      <p>
-        To finish setup, perform the following tasks:
-      <ol>
-        <li>Navigate to the Console tab in your app dashboard</li>
-        <li>In the console, run the command <em>python manage.py migrate</em> to perform the inital database migrations
-        </li>
-        <li>In the console, run the command <em>python manage.py createsuperuser</em> and follow the prompt to create
-          your super user</li>
-      </ol>
-      </p>
+    <div class="container">
+        <div class="card shadow bg-sec text-whiteoff mb-3">
+            <div class="row py-5">
+                <div class="col px-5 m-auto">
+                    <h5 class="text-teal">Hello!</h5>
+                    <h3>I'm <i class="text-teal">{{ name }}</i></h3>
+                    <h4 class="pt-2 pb-5">-- Junior Software Developer</h4>
+                    <p><i class="fas fa-globe-americas text-teal"></i> Dallas-Fort Worth Metroplex, Texas</p>
+                    <p><i class="far fa-paper-plane text-teal"></i> contact@ChandlerGBeck.me</p>
+                    <p><i class="fas fa-mobile-alt text-teal"></i> (972) 268-0546</p>
+                </div>
+                <div class="col m-auto">
+                    <picture>
+                        <img src="{% static 'chandler_military.png' %}" class="img-fluid" alt="...">
+                    </picture>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow text-whiteoff bg-sec mb-3">
+            <div class="row m-3">
+                <div class="col">
+                    <h4><i class="fab fa-python text-teal"></i> Python</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-smoke-teal text-main"
+                             role="progressbar"
+                             aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h4><i class="fab fa-linux text-teal"></i> Linux</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-smoke-teal text-main"
+                             role="progressbar"
+                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-3">
+                <div class="col">
+                    <h4><i class="fab fa-js-square text-teal"></i> JavaScript</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-smoke-teal text-main"
+                             role="progressbar"
+                             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h4><i class="fab fa-bootstrap text-teal"></i> BootStrap</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-smoke-teal text-main"
+                             role="progressbar"
+                             aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mx-3">
+                <p class="fst-italic text-whiteoff">## Progress bars constantly increasing as I strive to learn.</p>
+            </div>
+        </div>
+        <div class="card shadow text-whiteoff bg-sec mb-3">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>The consummate professional, Chandler can be relied upon in every situation to provide meaningful
+                        feedback and guidance based on experience beyond his years. He's the one I want on my team in
+                        every situation. Regardless of the circumstances, he provides irreplaceable value we can count
+                        on. </p>
+                    <footer class="blockquote-footer">Lieutenant Commander Eric Wynn, <cite title="Source Title">United
+                        States Navy</cite>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+        <div class="card shadow text-whiteoff bg-sec mb-3">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>In an age where many workers are reactive to job inputs, Chandler is rare in that he spends
+                        his
+                        time researching and learning in order to be proactive. This helps him react quickly and
+                        correctly to mission requirements, which is a necessity in his chosen profession. In regards
+                        to
+                        operational knowledge, Chandler is my go-to guy.</p>
+                    <footer class="blockquote-footer">Captain Nathan Paddock, <cite title="Source Title">United
+                        States Air Force</cite>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
     </div>
 
-    <div class="links">
-      <a href="#" target="_blank" rel="noopener noreferrer"><strong>Django on App Platform Tutorial</strong>
-        <span>Learn how to deploy your Django App to DigitalOcean</span>
-      </a>
-      <a href="https://www.digitalocean.com/docs/app-platform/languages-frameworks/python/" target="_blank"
-        rel="noopener noreferrer"><strong>DigitalOcean App Platform Docs for Django</strong>
-        <span>DigitalOcean's reference documentation for Django</span>
-      </a>
-      <a href="https://www.digitalocean.com/docs/app-platform/" target="_blank" rel="noopener noreferrer"><strong>App
-          Platform Documentation</strong><span>Learn about DigitalOcean's App Platform</span></a>
-      <a href="https://www.digitalocean.com/docs/droplets/how-to/" target="_blank" rel="noopener noreferrer"><strong>App
-          Platform API Documentation</strong>
-        <span>REST API Documentation for App Platform</span>
-      </a>
-    </div>
-  </div>
-
-  <div id="stripes">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      padding: 50px;
-      min-height: 100vh;
-      position: relative;
-      color: #fff;
-      font-family: "Nunito Sans", sans-serif;
-      font-size: 19px;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: "Almarai", sans-serif;
-    }
-
-    :root {
-      --background: linear-gradient(150deg,
-          #17acff 15%,
-          #016aff 70%,
-          #68a6ff 94%);
-      --first: #53f;
-      --second: #4553ff;
-      --third: #4f40ff;
-      --fourth: #25ddf5;
-      --fifth: #1fa2ff;
-    }
-
-    #stripes {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      width: 100%;
-      height: 100vw;
-      display: grid;
-      background: var(--background);
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: repeat(4, 1fr);
-      transform: skewY(-12deg);
-      transform-origin: 0;
-    }
-
-    #stripes span {
-      /* border: 1px solid #c00c00; */
-    }
-
-    #stripes span:first-child {
-      grid-column: span 1;
-      background: var(--first);
-    }
-
-    #stripes span:nth-child(2) {
-      grid-column: span 2;
-      background: var(--second);
-    }
-
-    #stripes span:nth-child(3) {
-      grid-column: span 2;
-      background: var(--third);
-    }
-
-    #stripes span:nth-child(4) {
-      grid-column: 6;
-      grid-row: 3;
-      background: var(--fourth);
-    }
-
-    #stripes span:nth-child(5) {
-      grid-column: span 2;
-      grid-row: 4;
-      background: var(--fifth);
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 50px 0;
-    }
-
-    .content {
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    h1 a {
-      color: #dbf1f5;
-    }
-
-    h1 a:hover {
-      color: #7decff;
-    }
-
-    p {
-      margin-bottom: 50px;
-    }
-
-    li {
-      text-align: left
-    }
-
-    code {
-      display: inline-block;
-      padding: 3px 6px;
-      margin-left: 3px;
-      margin-right: 3px;
-      border-radius: 5px;
-      font-size: 0.8rem;
-      background: #1a2279;
-      color: #dbf1f5;
-    }
-
-    .links {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .links a {
-      position: relative;
-      display: block;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 5px;
-      padding: 20px;
-      font-size: 1.1rem;
-      text-decoration: none;
-      color: #222;
-      transition: 0.3s ease all;
-      overflow: hidden;
-    }
-
-    .links a:before,
-    .links a:after {
-      font-size: 40px;
-      display: block;
-      position: absolute;
-    }
-
-    .links a:before {
-      content: "";
-      top: -80%;
-      right: -150px;
-      width: 250px;
-      height: 250px;
-      background: rgba(125, 236, 255, 0.6);
-      pointer-events: none;
-      transform: rotate(-25deg);
-      transition: 0.4s cubic-bezier(0.34, 0.31, 0, 1.81) transform;
-    }
-
-    .links a:after {
-      content: "👉";
-      top: 0;
-      bottom: 0;
-      display: flex;
-      align-items: center;
-      right: 30px;
-      transform: translateX(80px);
-      transition: 0.3s cubic-bezier(0.34, 0.31, 0, 1.81) transform;
-    }
-
-    .links a:hover {
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5);
-    }
-
-    .links a:hover:before {
-      transform: rotate(-25deg) translateX(60px);
-    }
-
-    .links a:hover:after {
-      transform: none;
-    }
-
-    .links a strong,
-    .links a span {
-      position: relative;
-      z-index: 1;
-    }
-
-    .links a strong {
-      font-weight: bold;
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .links a span {
-      color: #787878;
-      font-size: 0.9rem;
-    }
-  </style>
-</body>
-
-</html>
+{% endblock %}

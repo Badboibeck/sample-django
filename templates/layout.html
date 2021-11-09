@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <title>{{ name }} :: {{ title }}</title>
+
+    <!-- import bootstrap5 via url to have quicker load speeds -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- import changes to override bootstrap5 css styles -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/js/all.min.js"
+            integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+            crossorigin="anonymous"></script>
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+{% url 'home' as home_url %}
+{% url 'about' as about_url %}
+{% url 'resume' as resume_url %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-sec fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ home_url }}"> <i class="fas fa-terminal text-teal"></i> {{ name }}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-whiteoff" id="navbarSupportedContent">
+            <!-- set the ability to highlight active pages a specific color -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == home_url %}active text-teal{% endif %}"
+                       href="{{ home_url }}"><i class="fas fa-user"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == about_url %}active text-teal{% endif %}"
+                       href="{{ about_url }}"><i class="fas fa-user"></i> About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == resume_url %}active text-teal{% endif %}"
+                       href="{{ resume_url }}"><i class="fas fa-book-open"></i> Resume</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-project-diagram"></i> Projects
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <!-- Set URL links to open new tabs when clicked. -->
+                        <li><a class="dropdown-item" href="https://npa.gg" target="_blank" rel="noopener noreferrer">NPA
+                            Website</a></li>
+                        <li><a class="dropdown-item" href="https://discord.gg/npa" target="_blank"
+                               rel="noopener noreferrer">NPA Discord</a></li>
+                        <li>
+                            <hr class="dropdown-divider"> <!-- Make a divider to separate repos and sites -->
+                        </li>
+                        <li><a class="dropdown-item" href="https://github.com/Badboibeck/discord_npa_bot"
+                               target="_blank" rel="noopener noreferrer">Discord.py Bot Repo</a></li>
+                        <li><a class="dropdown-item" href="https://github.com/Badboibeck/discord_teambot_bot"
+                               target="_blank" rel="noopener noreferrer">Discord.js Bot Repo</a></li>
+                        <li><a class="dropdown-item" href="https://github.com/Badboibeck/BeckPortfolio" target="_blank"
+                               rel="noopener noreferrer">Django Python Website Repo</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-id-badge"></i> Contact
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="https://www.linkedin.com/in/chandlergbeck/" target="_blank"
+                               rel="noopener noreferrer">LinkedIn Profile</a></li>
+                        <li>
+                        <li><a class="dropdown-item" href="mailto:contact@chandlergbeck.me" target="_blank">contact@ChandlerGBeck.me</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% block content %}{% endblock %}
+
+
+<footer class="mt-auto">
+    <!-- Grid container -->
+    <div class="container-fluid bg-sec text-center py-3">
+        <!-- Section: Social media -->
+
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/Badboibeck_TTV" role="button"><i
+                class="fab fa-twitter text-teal"></i></a>
+
+        <!-- Discord -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://discord.gg/npa" role="button"
+        ><i class="fab fa-discord text-teal"></i
+        ></a>
+
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/chandlergbeck/"
+           role="button"
+        ><i class="fab fa-linkedin-in text-teal"></i
+        ></a>
+
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Badboibeck" role="button"
+        ><i class="fab fa-github text-teal"></i
+        ></a>
+        <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="container-fluid text-center text-whiteoff bg-sec-shaded py-3">
+        © 2021 Copyright:
+        <a class="text-white" href="https://chandlergbeck.me/">ChandlerGBeck.me</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+</body>
+
+</html>
